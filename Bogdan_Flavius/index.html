@@ -17,17 +17,22 @@
 </body>
 <script>
 
-    $('#george').on('mouseenter',function(e){
-        var maxX = $("#container").width() - $(this).width();
-        var maxY = $("#container").height() - $(this).height();
-        console.log($("#container").width());
-        console.log($("#container").height());
-        console.log($(this).width());
-        console.log($(this).height());
-        $(this).css({
-            'left':getRandomInt(0, maxX),
-            'top':getRandomInt(0, maxY)
-        });
+    var stat;
+
+    $('#george').on('mouseover',function(e){
+        stat = 1;
+        if (stat) {
+            var maxX = $("#container").width() - $(this).width();
+            var maxY = $("#container").height() - $(this).height();
+            $(this).css({
+                'left':getRandomInt(0, maxX),
+                'top':getRandomInt(0, maxY)
+            });
+            console.log(stat);
+        }
+    });
+    $('#george').on('mouseout', function(e) {
+        stat = 0;
     });
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;

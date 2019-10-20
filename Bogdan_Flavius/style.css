@@ -24,6 +24,7 @@ p {
     border-radius: 5px;
     max-height: 500px;
     position: relative;
+    cursor: url("cursor.png"), auto;
 }
 #container img {
     height: 80px;
